@@ -1,0 +1,80 @@
+body {
+    font-family: Montserrat, Verdana, sans-serif;
+    color: #484b50;
+    text-align: center;
+}
+
+h1 {
+    color: #484b50;
+    font-weight: bold;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#left-column,
+#center-column #right-column {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+
+}
+
+#right-column {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+    width: 200px;
+    display: flex;
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+button {
+    margin-top: 1em;
+    padding: 1em 1.5em;
+    font-size: 1em;
+    background-color: #fcb900;
+    color: #484b50;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+}
+
+#result {
+    margin-top: 1em;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fcb900;
+}

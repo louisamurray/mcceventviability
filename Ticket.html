@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Event Ticket Price Calculator</title>
+  <link rel="stylesheet" href="./css/styleTicket.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="./js/scriptTicket.js"></script>
+</head>
+
+<body>
+  <div id="Title">
+    <h1>Event Ticket Price Calculator</h1>
+  </div>
+  <div id="container">
+    <form id="left-column">
+      <div>
+        <label for="ticketsAvailable">Tickets Available:</label>
+        <input type="number" id="ticketsAvailable" required>
+      </div>
+      <div>
+        <label for="facilitatorCost">Facilitator Cost:</label>
+        <input type="number" id="facilitatorCost" required>
+      </div>
+      <div>
+        <label for="venueCost">Venue Cost:</label>
+        <input type="number" id="venueCost" required>
+      </div>
+      <div>
+        <label for="cateringCost">Catering Cost:</label>
+        <input type="number" id="cateringCost" required>
+      </div>
+      <div>
+        <label for="miscCost">Misc Cost:</label>
+        <input type="number" id="miscCost" required>
+      </div>
+    </form>
+    <form id="center-column">
+      <div>
+        <label for="marketingCost">Marketing Costs:</label>
+        <div class="input-wrapper">
+          <input type="checkbox" id="emailCampaign">
+          <label for="emailCampaign" style="font-weight: normal;">Email Campaign ($150)</label><br>
+          <input type="checkbox" id="radioCampaign">
+          <label for="radioCampaign" style="font-weight: normal;">Radio Campaign ($500)</label><br>
+          <input type="checkbox" id="socialMediaCampaign">
+          <label for="socialMediaCampaign" style="font-weight: normal;">Social Media Campaign ($100)</label><br>
+        </div>
+      </div>
+      <div>
+        <label for="eventManagerTime">Event Manager Time (hours):</label>
+        <input type="number" id="eventManagerTime" required>
+      </div>
+
+      <div>
+        <label for="sponsorAmount">Sponsor Amount:</label>
+        <input type="number" id="sponsorAmount" required>
+      </div>
+      <div>
+        <label for="profitMargin">Desired Profit Margin (%):</label>
+        <input type="number" id="profitMargin" required>
+      </div>
+      <div>
+        <button type="button" onclick="calculate()">Calculate</button>
+      </div>
+    </form>
+    <div id="right-column">
+      <div id="result"></div>
+    </div>
+  </div>
+</body>
+
+</html>
