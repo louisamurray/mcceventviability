@@ -11,7 +11,7 @@ This is a simple web app that calculates the ticket price needed to reach a user
 The app will then calculate the ticket price needed to reach the desired profit margin, taking into account all the costs involved in the event.
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Alternatively, view at https://stalwart-faloodeh-3cf712.netlify.app/
 
 ### Prerequisites
 You will need to have a web browser installed on your machine to run the app.
