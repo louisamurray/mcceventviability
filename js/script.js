@@ -19,8 +19,8 @@ function calculate() {
   let profitMargin = parseFloat(document.querySelector('#profitMargin').value);
 
   let totalCost = facilitatorCost + venueCost + marketingCost + cateringCost + eventManagerCost + miscCost;
-  let ticketPrice = (totalCost / ticketsAvailable) / (1 - (profitMargin / 100)).toFixed(2);
-  let ticketPriceInclGST = (ticketPrice * 1.15).toFixed(2);
+  let ticketPrice = (totalCost / ticketsAvailable) / (1 - (profitMargin / 100));
+  let ticketPriceInclGST = ticketPrice * 1.15;
 
-  document.querySelector('#result').innerHTML = `Ticket price (ex GST): $${ticketPrice}<br>Ticket price (incl GST): $${ticketPriceInclGST}`;
+  document.querySelector('#result').innerHTML = `Ticket price (ex GST): $${ticketPrice.toFixed(2)}<br>Ticket price (incl GST): $${ticketPriceInclGST.toFixed(2)}`;
 }
