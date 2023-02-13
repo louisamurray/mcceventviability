@@ -23,6 +23,7 @@ function calculate() {
   let netCost = totalCost - sponsorAmount;
   let ticketPrice = (netCost / ticketsAvailable) / (1 - (profitMargin / 100));
   let ticketPriceInclGST = ticketPrice * 1.15;
+  let totalProfit = ticketsAvailable * ticketPrice
 
-  document.querySelector('#result').innerHTML = `Ticket price (ex GST): $${ticketPrice.toFixed(2)}<br>Ticket price (incl GST): $${ticketPriceInclGST.toFixed(2)}`;
+  document.querySelector('#result').innerHTML = `Ticket price (ex GST): $${ticketPrice.toFixed(2)}<br>Ticket price (incl GST): $${ticketPriceInclGST.toFixed(2)}<br>Total profit (excl GST): $${totalProfit.toFixed(2)}`;
 }
