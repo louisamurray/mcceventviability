@@ -14,7 +14,7 @@ function calculate() {
   }
   let cateringCost = parseFloat(document.querySelector('#cateringCost').value);
   let eventManagerTime = parseFloat(document.querySelector('#eventManagerTime').value);
-  let eventManagerCost = eventManagerTime * 30;
+  let eventManagerCost = eventManagerTime * 35;
   let miscCost = parseFloat(document.querySelector('#miscCost').value);
   let sponsorAmount = parseFloat(document.querySelector('#sponsorAmount').value);
   let profitMargin = parseFloat(document.querySelector('#profitMargin').value);
