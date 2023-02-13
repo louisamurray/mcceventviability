@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http://C:\\Program Files\\nodejs\\node.exe .\\js\\script.jsProcess exited with code 1Uncaught ReferenceError ReferenceError: document is not defined    at <anonymous> (c:\\Users\\LouisaMurray\\mcceventviability\\js\\script.js:1:1)    at Module._compile (internal/modules/cjs/loader:1246:14)    at Module._extensions..js (internal/modules/cjs/loader:1300:10)    at Module.load (internal/modules/cjs/loader:1103:32)    at Module._load (internal/modules/cjs/loader:942:12)    at executeUserEntryPoint (internal/modules/run_main:83:12)    at <anonymous> (internal/main/run_main_module:23:47)No debugger available, can not send 'variables'",
+            "request": "launch",
+            "url": "http://C:\\Program Files\\nodejs\\node.exe .\\js\\script.jsProcess exited with code 1Uncaught ReferenceError ReferenceError: document is not defined    at <anonymous> (c:\\Users\\LouisaMurray\\mcceventviability\\js\\script.js:1:1)    at Module._compile (internal/modules/cjs/loader:1246:14)    at Module._extensions..js (internal/modules/cjs/loader:1300:10)    at Module.load (internal/modules/cjs/loader:1103:32)    at Module._load (internal/modules/cjs/loader:942:12)    at executeUserEntryPoint (internal/modules/run_main:83:12)    at <anonymous> (internal/main/run_main_module:23:47)No debugger available, can not send 'variables'"
+        }
+    ]
+}

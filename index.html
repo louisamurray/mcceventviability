@@ -5,59 +5,54 @@
     <title>Event Ticket Price Calculator</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="./js/script.js"></script>
   </head>
   <body>
-    <div id="app">
-      <h1>Event Ticket Price Calculator</h1>
-      <form>
-        <div>
-          <label for="ticketsAvailable">Tickets Available:</label>
-          <input type="number" id="ticketsAvailable" required>
+    <form>
+      <div>
+        <label for="ticketsAvailable">Tickets Available:</label>
+        <input type="number" id="ticketsAvailable" required>
+      </div>
+      <div>
+        <label for="facilitatorCost">Facilitator Cost:</label>
+        <input type="number" id="facilitatorCost" required>
+      </div>
+      <div>
+        <label for="venueCost">Venue Cost:</label>
+        <input type="number" id="venueCost" required>
+      </div>
+      <div>
+        <label for="marketingCost">Marketing Cost:</label>
+        <div class="input-wrapper">
+          <input type="checkbox" id="radioCampaign">
+          <label for="radioCampaign">Radio Campaign ($500)</label>
+          <input type="checkbox" id="emailCampaign">
+          <label for="emailCampaign">Email Campaign ($150)</label>
+          <input type="checkbox" id="socialMediaCampaign">
+          <label for="socialMediaCampaign">Social Media Campaign ($100)</label>
         </div>
-        <div>
-          <label for="facilitatorCost">Facilitator Cost:</label>
-          <input type="number" id="facilitatorCost" required>
-        </div>
-        <div>
-          <label for="venueCost">Venue Cost:</label>
-          <input type="number" id="venueCost" required>
-        </div>
-        <div>
-          <br>
-          <label for="marketingCost" style="font-weight: bold;">Marketing Cost:</label>
-          <div class="input-wrapper">
-            <input type="checkbox" id="radioCampaign">
-            <label for="radioCampaign">Radio Campaign ($500)</label>
-            <input type="checkbox" id="emailCampaign">
-            <label for="emailCampaign">Email Campaign ($150)</label>
-            <input type="checkbox" id="socialMediaCampaign">
-            <label for="socialMediaCampaign">Social Media Campaign ($100)</label>
-          </div>
-        </div>
-        <div>
-          <br>
-          <label for="cateringCost">Catering Cost:</label>
-          <input type="number" id="cateringCost" required>
-        </div>
-        <div>
-          <label for="eventManagerTime">Event Manager Time (hours):</label>
-          <input type="number" id="eventManagerTime" required>
-        </div>
-        <div>
-          <label for="miscCost">Misc Cost:</label>
-          <input type="number" id="miscCost" required>
-        </div>
-        <div>
-          <label for="profitMargin">Desired Profit Margin (%):</label>
-          <input type="number" id="profitMargin" required>
-        </div>
-        <div>
-          <button type="button" onclick="calculate()">Calculate</button>
-        </div>
-      </form>      
+      </div>
+      <div>
+        <label for="cateringCost">Catering Cost:</label>
+        <input type="number" id="cateringCost" required>
+      </div>
+      <div>
+        <label for="eventManagerTime">Event Manager Time (hours):</label>
+        <input type="number" id="eventManagerTime" required>
+      </div>
+      <div>
+        <label for="miscCost">Misc Cost:</label>
+        <input type="number" id="miscCost" required>
+      </div>
+      <div>
+        <label for="profitMargin">Desired Profit Margin (%):</label>
+        <input type="number" id="profitMargin" required>
+      </div>
+      <div>
+      <button type="button" onclick="calculate()">Calculate</button>
+      </div>
+      </form>
       <div id="result"></div>
-    </div>    
-    <script src="./js/script.js"></script>
-    <button type="button" id="export-csv">Export to CSV</button>
-  </body>
-</html>
+      
+        </body>
+      </html>
