@@ -1,6 +1,7 @@
 body {
     font-family: Montserrat;
     color: #484b50;
+    text-align: center;
 }
 
 h1 {
@@ -9,41 +10,46 @@ h1 {
 }
 
 #app {
-    width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
-    padding: 10px;
-  }
-  
-  label {
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    margin-bottom: 0.5em;
+}
+
+input[type="number"] {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1em;
     width: 200px;
-    text-align: right;
-    margin-right: 20px;
-  }
-  
-  input[type="number"] {
-    width: 50px;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
+    display: flex;
+    text-align: center;
+}
+
+button {
+    margin-top: 1em;
+    padding: 1em 1.5em;
+    font-size: 1em;
     background-color: #fcb900;
     color: #484b50;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
-  }
-  
-  #result {
-    margin-top: 50px;
-    font-size: 20px;
-  }
-  
+    border-radius: 25px;
+}
+
+#result {
+    margin-top: 1em;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+}
