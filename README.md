@@ -1,11 +1,11 @@
-# Ticket Sales Calculator
+# Event Ticket Price Calculator
 This is a simple web app that calculates the ticket price needed to reach a user-defined profit margin for an event. The user can input the following information:
 - Tickets available
 - Facilitator cost
 - Venue cost
-- Marketing cost
+- Marketing cost *Note: To change these costs edit lines 5-14 of /js/script.js*
 - Catering cost
-- Event manager time (hours). *Note: Calculated at $30/hr by default. Edit line 8 of /js/script.js to update.*
+- Event manager time (hours). *Note: Calculated at $30/hr by default. Edit line 17 of /js/script.js to update.*
 - Misc cost
 - Desired profit margin
 The app will then calculate the ticket price needed to reach the desired profit margin, taking into account all the costs involved in the event.
