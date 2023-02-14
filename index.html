@@ -10,7 +10,17 @@
       width: 100%;
       overflow: hidden; 
     }
-
+    @media only screen and (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    
+    #left-column,
+    #center-column,
+    #right-column {
+        width: 100%;
+    }
+}
   </style>
 </head>
 <body>
