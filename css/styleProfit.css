@@ -79,3 +79,15 @@ button {
     background-color: #fcb900;
     width: 300px;
 }
+
+@media only screen and (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    
+    #left-column,
+    #center-column,
+    #right-column {
+        width: 100%;
+    }
+}
