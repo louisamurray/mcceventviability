@@ -78,7 +78,7 @@ function downloadCSV() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'ticket-data.csv');
+    link.setAttribute('download', 'profit-data.csv');
     link.click();
   }
   
