@@ -1,7 +1,17 @@
 function calculate() {
+  // Get the number of tickets available and convert it to a number
   let ticketsAvailable = parseInt(document.querySelector('#ticketsAvailable').value) || 0;
+
+  // Get the facilitator cost, venue cost, catering cost, event manager time, and miscellaneous cost, and convert them to floating point numbers
   let facilitatorCost = parseFloat(document.querySelector('#facilitatorCost').value) || 0;
   let venueCost = parseFloat(document.querySelector('#venueCost').value) || 0;
+  let cateringCost = parseFloat(document.querySelector('#cateringCost').value) || 0;
+  let eventManagerTime = parseFloat(document.querySelector('#eventManagerTime').value) || 0;
+  let miscCost = parseFloat(document.querySelector('#miscCost').value) || 0;
+  let sponsorAmount = parseFloat(document.querySelector('#sponsorAmount').value) || 0;
+  let profitMargin = parseFloat(document.querySelector('#profitMargin').value) || 0;
+
+  // Calculate the total marketing cost
   let marketingCost = 0;
   if (document.querySelector('#radioCampaign').checked) {
     marketingCost += 500;
@@ -12,25 +22,31 @@ function calculate() {
   if (document.querySelector('#socialMediaCampaign').checked) {
     marketingCost += 100;
   }
-  let cateringCost = parseFloat(document.querySelector('#cateringCost').value) || 0;
-  let eventManagerTime = parseFloat(document.querySelector('#eventManagerTime').value) || 0;
-  let eventManagerCost = eventManagerTime * 35;
-  let miscCost = parseFloat(document.querySelector('#miscCost').value) || 0;
-  let sponsorAmount = parseFloat(document.querySelector('#sponsorAmount').value) || 0;
-  let profitMargin = parseFloat(document.querySelector('#profitMargin').value) || 0;
 
+  // Calculate the event manager cost
+  let eventManagerCost = eventManagerTime * 35;
+
+  // Calculate the total cost
   let totalCost = facilitatorCost + venueCost + marketingCost + cateringCost + eventManagerCost + miscCost;
+
+  // Calculate the net cost after subtracting the sponsor amount
   let netCost = totalCost - sponsorAmount;
+
+  // Calculate the ticket price
   let ticketPrice = (netCost / ticketsAvailable) / (1 - (profitMargin / 100));
+
+  // Calculate the ticket price including GST
   let ticketPriceInclGST = ticketPrice * 1.15;
+
+  // Calculate the total profit
   let totalProfit = ticketsAvailable * ticketPrice
 
+  // Update the result in the HTML page
   document.querySelector('#result').innerHTML = `Ticket price (ex GST): $${ticketPrice.toFixed(2)}<br>Ticket price (incl GST): $${ticketPriceInclGST.toFixed(2)}<br>Total profit (excl GST): $${totalProfit.toFixed(2)}`;
 }
 
 
 // Add ability to download as .csv
-
 function downloadCSV() {
   const ticketsAvailable = document.getElementById('ticketsAvailable').value;
   const facilitatorCost = document.getElementById('facilitatorCost').value;
