@@ -10,6 +10,7 @@ function calculate() {
   let miscCost = parseFloat(document.querySelector('#miscCost').value) || 0;
   let sponsorAmount = parseFloat(document.querySelector('#sponsorAmount').value) || 0;
   let profitMargin = parseFloat(document.querySelector('#profitMargin').value) || 0;
+  let membershipDiscount = parseFloat(document.querySelector('#membershipDiscount').value) || 0;
 
   // Calculate the total marketing cost
   let marketingCost = 0;
@@ -24,7 +25,7 @@ function calculate() {
   }
 
   // Calculate the event manager cost
-  let eventManagerCost = eventManagerTime * 35;
+  let eventManagerCost = eventManagerTime * 40;
 
   // Calculate the total cost
   let totalCost = facilitatorCost + venueCost + marketingCost + cateringCost + eventManagerCost + miscCost;
@@ -32,19 +33,26 @@ function calculate() {
   // Calculate the net cost after subtracting the sponsor amount
   let netCost = totalCost - sponsorAmount;
 
-  // Calculate the ticket price
+  // Calculate the ticket prices
   let ticketPrice = (netCost / ticketsAvailable) / (1 - (profitMargin / 100));
+  let memberTicketPrice = ticketPrice * (1 - (membershipDiscount / 100));
 
-  // Calculate the ticket price including GST
+  // Calculate the ticket prices including GST
   let ticketPriceInclGST = ticketPrice * 1.15;
+  let memberTicketPriceInclGST = memberTicketPrice * 1.15;
 
   // Calculate the total profit
-  let totalProfit = ticketsAvailable * ticketPrice
+  let totalProfit = ticketsAvailable * ticketPrice;
 
   // Update the result in the HTML page
-  document.querySelector('#result').innerHTML = `Ticket price (ex GST): $${ticketPrice.toFixed(2)}<br>Ticket price (incl GST): $${ticketPriceInclGST.toFixed(2)}<br>Total profit (excl GST): $${totalProfit.toFixed(2)}`;
+  document.querySelector('#result').innerHTML = `
+    Non-Member Ticket price (ex GST): $${ticketPrice.toFixed(2)}<br>
+    Non-Member Ticket price (incl GST): $${ticketPriceInclGST.toFixed(2)}<br>
+    Member Ticket price (ex GST): $${memberTicketPrice.toFixed(2)}<br>
+    Member Ticket price (incl GST): $${memberTicketPriceInclGST.toFixed(2)}<br>
+    Total profit (excl GST): $${totalProfit.toFixed(2)}
+  `;
 }
-
 
 // Add ability to download as .csv
 function downloadCSV() {
@@ -59,6 +67,7 @@ function downloadCSV() {
   const eventManagerTime = document.getElementById('eventManagerTime').value;
   const sponsorAmount = document.getElementById('sponsorAmount').value;
   const profitMargin = document.getElementById('profitMargin').value;
+  const membershipDiscount = document.getElementById('membershipDiscount').value;
   const resultString = document.getElementById('result').innerHTML;
 
   // Split the result string on the <br> tag
@@ -77,6 +86,7 @@ function downloadCSV() {
     ['Event Manager Time', eventManagerTime],
     ['Sponsor Amount', sponsorAmount],
     ['Desired Profit Margin', profitMargin],
+    ['Membership Discount', membershipDiscount]
   ];
 
   // Add each result row to the data array
