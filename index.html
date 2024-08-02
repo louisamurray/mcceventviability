@@ -4,31 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Event Calculators</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <style>
-    iframe {
-      height: 550px;
-      width: 100%;
-      overflow: hidden; 
-    }
-    @media only screen and (max-width: 768px) {
-    #container {
-        flex-direction: column;
-    }
-    
-    #left-column,
-    #center-column,
-    #right-column {
-        width: 100%;
-    }
-}
   </style>
 </head>
 <body>
-  <div>
-    <iframe src="Ticket.html"></iframe>
+  <div id="container">
+    <button onclick="openModal('ticketModal')">Open Ticket Calculator</button>
+    <button onclick="openModal('profitModal')">Open Profit Calculator</button>
+    <button onclick="openModal('minimumTicketsModal')">Open Minimum Tickets Calculator</button>
   </div>
-  <div>
-    <iframe src="Profit.html"></iframe>
+
+  <div id="ticketModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('ticketModal')">&times;</span>
+      <iframe src="Ticket.html"></iframe>
+    </div>
   </div>
+
+  <div id="profitModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('profitModal')">&times;</span>
+      <iframe src="Profit.html"></iframe>
+    </div>
+  </div>
+
+  <div id="minimumTicketsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('minimumTicketsModal')">&times;</span>
+      <iframe src="MinimumTickets.html"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target.className === 'modal') {
+        event.target.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>

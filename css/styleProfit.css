@@ -2,11 +2,13 @@ body {
     font-family: Montserrat, Verdana, sans-serif;
     color: #484b50;
     text-align: center;
+    font-size: 1em;
 }
 
 h1 {
     color: #484b50;
     font-weight: bold;
+    font-size: 2em;
 }
 
 #container {
@@ -14,15 +16,30 @@ h1 {
     justify-content: center;
 }
 
-#left-column,
+#left-column {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1em;
+}
+
 #center-column {
     width: 33.33%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    align-self: flex-start;
+    font-size: 1em;
+}
 
+#center-column > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 #right-column {
@@ -31,6 +48,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 1em;
 }
 
 form {
@@ -38,17 +56,19 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 1em;
 }
 
 label {
     margin-bottom: 0.5em;
     font-weight: bold;
+    font-size: 2em;
 }
 
 input[type="number"] {
     margin-bottom: 1em;
     padding: 0.5em;
-    font-size: 1em;
+    font-size: 2em;
     width: 200px;
     display: flex;
     text-align: center;
@@ -57,13 +77,15 @@ input[type="number"] {
 input[type="checkbox"] {
     margin-bottom: 1em;
     padding: 0.5em;
-    font-size: 1em;
+    font-size: 2em;
+    width: 2em;
+    height: 2em;
 }
 
 button {
     margin-top: 1em;
     padding: 1em 1.5em;
-    font-size: 1em;
+    font-size: 2em;
     background-color: #fcb900;
     color: #484b50;
     font-weight: bold;
@@ -73,7 +95,7 @@ button {
 
 #result {
     margin-top: 1em;
-    font-size: 1.2em;
+    font-size: 2.2em;
     text-align: center;
     font-weight: bold;
     background-color: #fcb900;

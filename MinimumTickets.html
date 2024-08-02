@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Event Ticket Price Calculator</title>
-  <link rel="stylesheet" href="./css/styleTicket.css">
+  <title>Event Profit Calculator</title>
+  <link rel="stylesheet" href="./css/styleProfit.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <script src="./js/scriptTicket.js"></script>
+  <script src="./js/minimumTickets.js"></script>
 </head>
 <body>
   <div id="Title">
-    <h1>Event Ticket Price Calculator</h1>
+    <h1>Event Profit Calculator</h1>
   </div>
   <div id="container">
     <form id="left-column">
       <div>
-        <label for="ticketsAvailable">Tickets Available:</label>
-        <input type="number" id="ticketsAvailable" required>
+        <label for="nonMemberTicketPrice">Non-Member Ticket Price:</label>
+        <input type="number" id="nonMemberTicketPrice" required>
+      </div>
+      <div>
+        <label for="memberTicketPrice">Member Ticket Price:</label>
+        <input type="number" id="memberTicketPrice" required>
+      </div>
+      <div>
+        <label for="memberPercentage">Percentage of Members (%):</label>
+        <input type="number" id="memberPercentage" required>
       </div>
       <div>
         <label for="facilitatorCost">Facilitator Cost:</label>
@@ -56,15 +64,11 @@
         <input type="number" id="sponsorAmount" required>
       </div>
       <div>
-        <label for="profitMargin">Desired Profit Margin (%):</label>
-        <input type="number" id="profitMargin" required>
+        <label for="desiredProfitMargin">Desired Profit Margin (%):</label>
+        <input type="number" id="desiredProfitMargin" required>
       </div>
       <div>
-        <label for="membershipDiscount">Membership Discount (%):</label>
-        <input type="number" id="membershipDiscount" min="0" max="100" step="0.01" required>
-      </div>
-      <div>
-        <button type="button" id="calculateButton" onclick="calculate()">Calculate</button>
+        <button type="button" id="calculateButton" onclick="calculateMinimumTickets()">Calculate</button>
         <br>
         <button type="button" id="downloadButton" onclick="downloadCSV()">Download CSV</button>
       </div>
