@@ -9,7 +9,7 @@ The user can choose the appropriate script based on their specific needs. The ap
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Alternatively, view at [https://stalwart-faloodeh-3cf712.netlify.app/](https://stalwart-faloodeh-3cf712.netlify.app/)
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Alternatively, view at [[https://stalwart-faloodeh-3cf712.netlify.app/]([https://mcceventviability2024.netlify.app/])
 
 ### Prerequisites
 
