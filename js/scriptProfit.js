@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
       marketingCost += 100;
     }
 
-    let eventManagerCost = eventManagerTime * 35;
+    let eventManagerCost = eventManagerTime ? eventManagerTime * 35 : 0;
     let totalCateringCost = cateringPerTicket ? cateringCost * ticketsAvailable : cateringCost;
-    let totalCost = facilitatorCost + venueCost + marketingCost + totalCateringCost + eventManagerCost + miscCost;
+    let totalCost = facilitatorCost + venueCost + totalCateringCost + marketingCost + eventManagerCost + miscCost;
 
     let result = document.querySelector('#result');
 
@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    if (nonMemberTicketPrice <= 0 || memberTicketPrice <= 0) {
-      result.innerHTML = 'Ticket prices must be greater than 0.';
+    if (nonMemberTicketPrice <= 0 && memberTicketPrice <= 0) {
+      result.innerHTML = 'At least one ticket price must be greater than 0.';
       return;
     }
 

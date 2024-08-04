@@ -8,6 +8,7 @@ body {
   margin: 0;
   text-align: center;
   font-size: 1em;
+  overflow: hidden;
 }
 
 h1 {
@@ -25,6 +26,7 @@ h1 {
   max-width: 1200px;
   padding: 20px;
   height: 100%;
+  overflow: hidden;
 }
 
 .dropdown {
@@ -72,14 +74,15 @@ button:active {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  overflow: auto;
+  height: 95%;
+  padding-top: 5%;
+  overflow: hidden; 
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 10% auto;
+  margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 90%;
@@ -109,8 +112,9 @@ iframe {
 
 @media (max-width: 768px) {
   body {
-    height: auto;
+    height: 100vh; 
     padding: 20px;
+    overflow: hidden; 
   }
 
   #container {
@@ -123,7 +127,7 @@ iframe {
 
   .modal-content {
     width: 90%;
-    margin: 15% auto;
+    margin: auto;
   }
 }
 
@@ -139,6 +143,6 @@ iframe {
 
   .modal-content {
     width: 95%;
-    margin: 20% auto;
+    margin: auto;
   }
 }

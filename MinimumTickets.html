@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Event Profit Calculator</title>
+  <title>Minimum Tickets Calculator</title>
   <link rel="stylesheet" href="./css/styleCalculator.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
   <script src="./js/minimumTickets.js" defer></script>
 </head>
 <body>
@@ -50,11 +51,11 @@
         <label for="marketingCost">Marketing Costs:</label>
         <div class="input-wrapper">
           <input type="checkbox" id="emailCampaign">
-          <label for="emailCampaign">Email Campaign ($150)</label><br>
+          <label for="emailCampaign" style="font-weight: normal;">Email Campaign ($150)</label><br>
           <input type="checkbox" id="radioCampaign">
-          <label for="radioCampaign">Radio Campaign ($500)</label><br>
+          <label for="radioCampaign" style="font-weight: normal;">Radio Campaign ($500)</label><br>
           <input type="checkbox" id="socialMediaCampaign">
-          <label for="socialMediaCampaign">Social Media Campaign ($100)</label><br>
+          <label for="socialMediaCampaign" style="font-weight: normal;">Social Media Campaign ($100)</label><br>
         </div>
       </div>
       <div>
@@ -74,12 +75,14 @@
       <div id="result"></div>
     </div>
   </div>
-  <container id="button-cont">  
+  <div id="button-cont">  
     <div>
-      <button type="button" id="calculateButton" onclick="calculateMinimumTickets()">Calculate</button>
-      <button type="button" onclick="resetForm()">Reset</button>
-      <button type="button" id="downloadButton" onclick="downloadCSV()">Download CSV</button>
+      <button type="button" id="calculateButton">Calculate</button>
+      <button type="button" id="resetButton">Reset</button>
+      <button type="button" id="downloadButton">Download</button>
+      <input type="file" id="uploadFile" accept=".xlsx" style="display:none;">
+      <button type="button" id="uploadButton">Upload</button>
     </div>
-  </container>
+  </div>
 </body>
 </html>
