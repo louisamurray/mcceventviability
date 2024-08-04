@@ -1,115 +1,163 @@
 body {
-    font-family: Montserrat, Verdana, sans-serif;
-    color: #484b50;
-    text-align: center;
-    font-size: 1em;
+  font-family: Montserrat, Verdana, sans-serif;
+  color: #484b50;
+  text-align: center;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    color: #484b50;
-    font-weight: bold;
-    font-size: 2em;
+  color: #484b50;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0.5em 0;
 }
 
 #container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+#left-column, 
+#center-column, 
+#right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
 #left-column {
-    width: 33.33%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    font-size: 1em;
+  width: 33.33%;
 }
 
 #center-column {
-    width: 33.33%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em;
-}
-
-#center-column > div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  width: 33.33%;
 }
 
 #right-column {
-    width: 33.33%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em;
+  width: 33.33%;
+}
+
+#center-column > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
 }
 
 label {
-    margin-bottom: 0.5em;
-    font-weight: bold;
-    font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-input[type="number"] {
-    margin-bottom: 1em;
-    padding: 0.5em;
-    font-size: 2em;
-    width: 200px;
-    display: flex;
-    text-align: center;
+input[type="number"], 
+input[type="checkbox"] {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  font-size: 1.2em;
+  width: 200px;
+  text-align: center;
 }
 
 input[type="checkbox"] {
-    margin-bottom: 1em;
-    padding: 0.5em;
-    font-size: 2em;
-    width: 2em;
-    height: 2em;
+  width: 1.5em;
+  height: 1.5em;
 }
 
 button {
-    margin-top: 1em;
-    padding: 1em 1.5em;
-    font-size: 2em;
-    background-color: #fcb900;
-    color: #484b50;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
+  margin-top: 1em;
+  padding: 0.8em 1.2em;
+  font-size: 1.2em;
+  background-color: #fcb900;
+  color: #484b50;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
 }
 
 #result {
-    margin-top: 1em;
-    font-size: 2.2em;
-    text-align: center;
-    font-weight: bold;
-    background-color: #fcb900;
-    width: 300px;
+  margin-top: 1em;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  background-color: #fcb900;
+  width: 300px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 768px) {
-    #container {
-        flex-direction: column;
-    }
-    
-    #left-column,
-    #center-column,
-    #right-column {
-        width: 100%;
-    }
+  #container {
+    flex-direction: column;
+  }
+
+  #left-column, 
+  #center-column, 
+  #right-column {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.3em;
+  }
+
+  label {
+    font-size: 1em;
+  }
+
+  input[type="number"], 
+  input[type="checkbox"] {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 0.6em 1em;
+  }
+
+  #result {
+    font-size: 1.2em;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  label {
+    font-size: 0.9em;
+  }
+
+  input[type="number"], 
+  input[type="checkbox"] {
+    font-size: 0.9em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.5em 0.8em;
+  }
+
+  #result {
+    font-size: 1em;
+  }
 }

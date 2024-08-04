@@ -87,3 +87,20 @@ function downloadCSV() {
   link.setAttribute('download', 'ticket-data.csv');
   link.click();
 }
+
+function resetForm() {
+  document.querySelector('#desiredProfitMargin').value = '';
+  document.querySelector('#nonMemberTicketPrice').value = '';
+  document.querySelector('#memberTicketPrice').value = '';
+  document.querySelector('#memberPercentage').value = '';
+  document.querySelector('#facilitatorCost').value = '';
+  document.querySelector('#venueCost').value = '';
+  document.querySelector('#cateringCost').value = '';
+  document.querySelector('#miscCost').value = '';
+  document.querySelector('#emailCampaign').checked = false;
+  document.querySelector('#radioCampaign').checked = false;
+  document.querySelector('#socialMediaCampaign').checked = false;
+  document.querySelector('#eventManagerTime').value = '';
+  document.querySelector('#sponsorAmount').value = '';
+  document.querySelector('#result').innerHTML = '';
+}

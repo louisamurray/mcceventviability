@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Event Profit Calculator</title>
-  <link rel="stylesheet" href="./css/styleProfit.css">
+  <link rel="stylesheet" href="./css/styleCalculator.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <script src="./js/minimumTickets.js"></script>
 </head>
 <body>
   <div id="Title">
-    <h1>Event Profit Calculator</h1>
+    <h1>Minimum Tickets Calculator</h1>
   </div>
   <div id="container">
     <form id="left-column">
@@ -70,6 +70,7 @@
       <div>
         <button type="button" id="calculateButton" onclick="calculateMinimumTickets()">Calculate</button>
         <br>
+        <button type="button" onclick="resetForm()">Reset</button><br>
         <button type="button" id="downloadButton" onclick="downloadCSV()">Download CSV</button>
       </div>
     </form>

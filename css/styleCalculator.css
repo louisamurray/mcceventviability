@@ -45,6 +45,10 @@ h1 {
   width: 33.33%;
 }
 
+#right-column:empty {
+  display: none;
+}
+
 #center-column > div {
   width: 100%;
   display: flex;
@@ -90,6 +94,17 @@ button {
   font-weight: bold;
   border: none;
   border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #ffdb4d;
+}
+
+button:active {
+  background-color: #f9a825;
+  transform: scale(0.95);
 }
 
 #result {

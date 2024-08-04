@@ -6,14 +6,28 @@
   <title>Event Calculators</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <style>
-  </style>
 </head>
 <body>
+  
   <div id="container">
-    <button onclick="openModal('ticketModal')">Open Ticket Calculator</button>
-    <button onclick="openModal('profitModal')">Open Profit Calculator</button>
-    <button onclick="openModal('minimumTicketsModal')">Open Minimum Tickets Calculator</button>
+    
+    <div class="dropdown">
+      <label for="inputSelect">I know my:</label>
+      <select id="inputSelect" onchange="updateOutputOptions()">
+        <option value="">Select</option>
+        <option value="ticketPrice">Ticket Price</option>
+        <option value="profitMargin">Profit Margin</option>
+      </select>
+    </div>
+    
+    <div class="dropdown">
+      <label for="outputSelect">I need to know my:</label>
+      <select id="outputSelect">
+        <option value="">Select</option>
+      </select>
+    </div>
+    
+    <button onclick="openCalculator()">Calculate</button>
   </div>
 
   <div id="ticketModal" class="modal">
@@ -38,6 +52,38 @@
   </div>
 
   <script>
+    function updateOutputOptions() {
+      const inputSelect = document.getElementById('inputSelect').value;
+      const outputSelect = document.getElementById('outputSelect');
+      
+      // Clear the current options
+      outputSelect.innerHTML = '<option value="">Select</option>';
+
+      // Populate options based on the input selection
+      if (inputSelect === 'ticketPrice') {
+        outputSelect.innerHTML += '<option value="minimumSales">Minimum Sales</option>';
+        outputSelect.innerHTML += '<option value="profitMargin">Profit Margin</option>';
+      } else if (inputSelect === 'profitMargin') {
+        outputSelect.innerHTML += '<option value="minimumSales">Minimum Sales</option>';
+        outputSelect.innerHTML += '<option value="ticketPrice">Ticket Price</option>';
+      }
+    }
+
+    function openCalculator() {
+      const inputSelect = document.getElementById('inputSelect').value;
+      const outputSelect = document.getElementById('outputSelect').value;
+
+      if (inputSelect === 'ticketPrice' && outputSelect === 'minimumSales') {
+        openModal('minimumTicketsModal');
+      } else if (inputSelect === 'ticketPrice' && outputSelect === 'profitMargin') {
+        openModal('profitModal');
+      } else if (inputSelect === 'profitMargin' && outputSelect === 'minimumSales') {
+        openModal('minimumTicketsModal');
+      } else if (inputSelect === 'profitMargin' && outputSelect === 'ticketPrice') {
+        openModal('ticketModal');
+      }
+    }
+
     function openModal(modalId) {
       document.getElementById(modalId).style.display = "block";
     }

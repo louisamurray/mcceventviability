@@ -25,14 +25,24 @@ function calculate() {
   let totalCost = facilitatorCost + venueCost + marketingCost + cateringCost + eventManagerCost + miscCost;
   let netCost = totalCost - sponsorAmount;
 
-  let totalRevenue = (netCost / ticketsAvailable) / (1 - (profitMargin / 100));
-  let nonMemberTicketPrice = totalRevenue;
+  if (ticketsAvailable === 0) {
+    document.querySelector('#result').innerHTML = 'Tickets available must be greater than 0.';
+    return;
+  }
+
+  if (profitMargin >= 100) {
+    document.querySelector('#result').innerHTML = 'Profit margin must be less than 100%.';
+    return;
+  }
+
+  let totalRevenuePerTicket = netCost / ticketsAvailable / (1 - (profitMargin / 100));
+  let nonMemberTicketPrice = totalRevenuePerTicket;
   let memberTicketPrice = nonMemberTicketPrice * (1 - (membershipDiscount / 100));
 
   let ticketPriceInclGST = nonMemberTicketPrice * 1.15;
   let memberTicketPriceInclGST = memberTicketPrice * 1.15;
 
-  let totalProfit = ticketsAvailable * ((nonMemberTicketPrice * (1 - memberPercentage / 100)) + (memberTicketPrice * (memberPercentage / 100)));
+  let totalProfit = ticketsAvailable * ((nonMemberTicketPrice * (1 - memberPercentage / 100)) + (memberTicketPrice * (memberPercentage / 100))) - netCost;
 
   document.querySelector('#result').innerHTML = `
     Non-Member Ticket price (ex GST): $${nonMemberTicketPrice.toFixed(2)}<br>
@@ -92,4 +102,21 @@ function downloadCSV() {
   link.setAttribute('href', encodedUri);
   link.setAttribute('download', 'ticket-data.csv');
   link.click();
+}
+
+function resetForm() {
+  document.querySelector('#ticketsAvailable').value = '';
+  document.querySelector('#facilitatorCost').value = '';
+  document.querySelector('#venueCost').value = '';
+  document.querySelector('#cateringCost').value = '';
+  document.querySelector('#miscCost').value = '';
+  document.querySelector('#emailCampaign').checked = false;
+  document.querySelector('#radioCampaign').checked = false;
+  document.querySelector('#socialMediaCampaign').checked = false;
+  document.querySelector('#eventManagerTime').value = '';
+  document.querySelector('#sponsorAmount').value = '';
+  document.querySelector('#profitMargin').value = '';
+  document.querySelector('#membershipDiscount').value = '';
+  document.querySelector('#memberPercentage').value = '';
+  document.querySelector('#result').innerHTML = '';
 }
