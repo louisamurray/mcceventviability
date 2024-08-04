@@ -15,33 +15,33 @@
   <div id="container">
     <form id="left-column">
       <div>
-        <label for="ticketsAvailable">Tickets Available:</label>
+        <label for="ticketsAvailable">Tickets Available:</label><br>
         <input type="number" id="ticketsAvailable" required>
       </div>
       <div>
-        <label for="memberPercentage">Member Percentage (%):</label>
-        <input type="number" id="memberPercentage" min="0" max="100" step="0.01" required>
+        <label for="memberPercentage">Member Percentage (%):</label><br>
+        <input type="number" id="memberPercentage" min="0" max="100" step="1" required>
       </div>
       <div>
-        <label for="facilitatorCost">Facilitator Cost:</label>
+        <label for="facilitatorCost">Facilitator Cost:</label><br>
         <input type="number" id="facilitatorCost" required>
       </div>
       <div>
-        <label for="venueCost">Venue Cost:</label>
+        <label for="venueCost">Venue Cost:</label><br>
         <input type="number" id="venueCost" required>
       </div>
       <div>
-        <label for="cateringCost">Catering Cost:</label>
+        <label for="cateringCost">Catering Cost:</label><br>
         <input type="number" id="cateringCost" required>
       </div>
       <div>
-        <label for="miscCost">Misc Cost:</label>
+        <label for="miscCost">Misc Cost:</label><br>
         <input type="number" id="miscCost" required>
       </div>
     </form>
     <form id="center-column">
       <div>
-        <label for="marketingCost">Marketing Costs:</label>
+        <label for="marketingCost"><h2>Marketing Costs:</h2></label>
         <div class="input-wrapper">
           <input type="checkbox" id="emailCampaign">
           <label for="emailCampaign" style="font-weight: normal;">Email Campaign ($150)</label><br>
@@ -52,11 +52,12 @@
         </div>
       </div>
       <div>
+        <label for="otherInfo"><h2>Other:</h2></label>
         <label for="eventManagerTime">Event Manager Time (hours):</label>
         <input type="number" id="eventManagerTime" required>
       </div>
       <div>
-        <label for="sponsorAmount">Sponsor Amount:</label>
+        <label for="sponsorAmount">Sponsor Amount ($):</label>
         <input type="number" id="sponsorAmount" required>
       </div>
       <div>
@@ -65,18 +66,19 @@
       </div>
       <div>
         <label for="membershipDiscount">Membership Discount (%):</label>
-        <input type="number" id="membershipDiscount" min="0" max="100" step="0.01" required>
-      </div>
-      <div>
-        <button type="button" id="calculateButton" onclick="calculate()">Calculate</button>
-        <br>
-        <button type="button" onclick="resetForm()">Reset</button><br>
-        <button type="button" id="downloadButton" onclick="downloadCSV()">Download CSV</button>
+        <input type="number" id="membershipDiscount" min="0" max="100" step="1" required>
       </div>
     </form>
     <div id="right-column">
       <div id="result"></div>
     </div>
   </div>
+<container id="button-cont">  
+  <div>
+  <button type="button" id="calculateButton" onclick="calculate()">Calculate</button>
+  <button type="button" onclick="resetForm()">Reset</button>
+  <button type="button" id="downloadButton" onclick="downloadCSV()">Download CSV</button>
+</div>
+</container>
 </body>
 </html>
